@@ -12,9 +12,11 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Generate report
       run: |
-        pip install fastapi
-        pip install coverage
+        cd api
+        pip install -r requirements.txt
+        cd ..
         cd tests
+        pip install coverage
         coverage run test_routes.py
         coverage xml
     - name: Upload coverage to Codecov
