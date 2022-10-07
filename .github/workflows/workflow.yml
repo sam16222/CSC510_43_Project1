@@ -14,7 +14,7 @@ jobs:
       run: |
         pip install coverage
         cd tests
-        coverage run engine.py
+        coverage run test_routes.py
         coverage xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
